@@ -12,7 +12,7 @@ pip install storyfed
 ```bash
 from storyfed import Storyfed
 
-client = Storyfed(api_key="YOUR_RAPIDAPI_KEY")
+client = Storyfed(api_key="YOUR_API_KEY")
 
 video = client.generate_video(
     prompt="[Scene 1]\nA cinematic shot of space.",
