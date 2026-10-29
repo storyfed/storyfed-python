@@ -5,6 +5,7 @@ The official Python wrapper for the Storyfed AI Video Generation API.
 ## Installation
 ```bash
 pip install storyfed
+```
 
 ## Quick Start
 
@@ -19,3 +20,4 @@ video = client.generate_video(
 )
 
 print(f"Success! Watch here: {video['url']}")
+```
