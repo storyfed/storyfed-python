@@ -7,12 +7,23 @@ class Storyfed:
         self.base_url = base_url
         self.headers = {"Content-Type": "application/json", "X-API-Key": self.api_key}
 
-    def generate_video(self, prompt, quality_tier="Budget", ratio="9:16", estimated_length=60, poll_interval=15, verbose=True):
+    def generate_video(self, prompt, quality_tier="Budget", ratio="9:16", estimated_length=60, attachments=None, poll_interval=15, verbose=True):
         """Generates the video and returns the metadata and URL."""
-        payload = {"prompt": prompt, "quality_tier": quality_tier, "ratio": ratio, "estimated_length": estimated_length}
         
+        # Add the base parameters
+        payload = {
+            "prompt": prompt, 
+            "quality_tier": quality_tier, 
+            "ratio": ratio, 
+            "estimated_length": estimated_length
+        }
+        
+        # Only add attachments to payload if the user provided them
+        if attachments:
+            payload["attachments"] = attachments
+            
         if verbose:
-            print("🎬 Starting Storyfed Video Generation...")
+            print("Starting Storyfed Video Generation...")
             
         res = requests.post(f"{self.base_url}/storyfed-1", headers=self.headers, json=payload)
         if res.status_code != 200: raise Exception(f"Failed to start: {res.text}")
