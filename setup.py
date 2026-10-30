@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="storyfed",
-    version="1.0.4",
+    version="1.0.5",
     description="The official Python SDK for the Storyfed Video Generation API.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
