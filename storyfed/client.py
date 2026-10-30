@@ -46,7 +46,9 @@ class Storyfed:
                 if verbose:
                     print("\nGeneration Complete!")
                     print(f"Title: {result.get('title')}")
+                    print(f"Description: {result.get('description')}")
                     print(f"Hashtags: {result.get('hashtags')}")
+                    print(f"Thumbnail: {result.get('thumbnail')}")
                     
                 return result
                 
